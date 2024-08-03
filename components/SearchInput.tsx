@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import qs from "query-string";
-import Input from "./Input";
+import Input from "./shared/Input";
 
 const SearchInput = () => {
   const router = useRouter();

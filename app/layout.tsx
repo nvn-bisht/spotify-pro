@@ -7,7 +7,9 @@ import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
 import getSongsByUserId from "@/actions/getSongsByUser.Id";
-import Player from "@/components/Player";
+import Player from "@/components/player/Player";
+import Player2 from "@/components/player/Player2";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const font = Figtree({ subsets: ["latin"] });
 
@@ -28,14 +30,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider />
-        <SupabaseProvider>
-          <UserProvider>
-            <ModalProvider />
-            <Sidebar songs={userSongs}>{children}</Sidebar>
-            <Player />
-          </UserProvider>
-        </SupabaseProvider>
+        <TooltipProvider>
+          <ToasterProvider />
+          <SupabaseProvider>
+            <UserProvider>
+              <ModalProvider />
+              <Sidebar songs={userSongs}>{children}</Sidebar>
+              <Player />
+              <Player2 />
+            </UserProvider>
+          </SupabaseProvider>
+        </TooltipProvider>
       </body>
     </html>
   );

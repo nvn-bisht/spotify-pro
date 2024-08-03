@@ -1,7 +1,6 @@
 "use client";
 
-import SongCard from "@/components/SongCard";
-import SongItem from "@/components/SongItem";
+import { SongCard } from "@/components/SongCard";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import useOnPlay from "@/hooks/useOnPlay";
 import { Modules } from "@/lib/types";
@@ -12,11 +11,6 @@ interface PageContentProps {
 }
 
 const SongSection: React.FC<PageContentProps> = ({ homeData }) => {
-  //   const onPlay = useOnPlay(songs);
-  //   if (songs.length === 0) {
-  //     return <div className="mt-4 text-neutral-400">Upload Your First Song</div>;
-  //   }
-
   return (
     <div
       className="
@@ -30,8 +24,8 @@ const SongSection: React.FC<PageContentProps> = ({ homeData }) => {
 
         return (
           <div key={key}>
-            <header className="border-b pb-2">
-              <h2 className="pl-2 font-heading text-2xl drop-shadow-md dark:bg-gradient-to-br dark:from-neutral-200 dark:to-neutral-600 dark:bg-clip-text dark:text-transparent sm:text-3xl md:text-4xl lg:pl-0 ">
+            <header className="border-b border-neutral-500/25 p-2">
+              <h2 className="text-white text-2xl font-semibold mb-5">
                 {section.title}
               </h2>
 
@@ -46,17 +40,19 @@ const SongSection: React.FC<PageContentProps> = ({ homeData }) => {
                   })}
                 >
                   {section.data.map(
-                    ({ id, name, url, subtitle, type, image, explicit }) => (
-                      <SongCard
-                        key={id}
-                        name={name}
-                        url={url}
-                        subtitle={subtitle}
-                        type={type}
-                        image={image}
-                        explicit={explicit}
-                      />
-                    )
+                    ({ id, name, url, subtitle, type, image, explicit }) => {
+                      return (
+                        <SongCard
+                          key={id}
+                          name={name}
+                          url={url}
+                          subtitle={subtitle}
+                          type={type}
+                          image={image}
+                          explicit={explicit}
+                        />
+                      );
+                    }
                   )}
                 </div>
 

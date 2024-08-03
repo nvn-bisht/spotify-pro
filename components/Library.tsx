@@ -7,7 +7,7 @@ import { useUser } from "@/hooks/useUser";
 import useUploadModal from "@/hooks/useUploadModal";
 import { Song } from "@/types";
 import React from "react";
-import MediaItem from "./MediaItem";
+import MediaItem from "./shared/MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
 
 interface LibraryProps {

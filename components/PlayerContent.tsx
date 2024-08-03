@@ -9,8 +9,8 @@ import { AiFillStepBackward, AiFillStepForward } from "react-icons/ai";
 import { Song } from "@/types";
 import usePlayer from "@/hooks/usePlayer";
 
-import LikeButton from "./LikeButton";
-import MediaItem from "./MediaItem";
+import LikeButton from "./shared/LikeButton";
+import MediaItem from "./shared/MediaItem";
 import Slider from "./Slider";
 
 interface PlayerContentProps {
