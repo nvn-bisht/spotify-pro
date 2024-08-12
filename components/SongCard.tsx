@@ -9,6 +9,7 @@ import { ImageWithFallback } from "./ImageWithFallback";
 import { Badge } from "./ui/badge";
 import { Card, CardContent } from "./ui/card";
 import { PlayButton2 } from "./shared/PlayButton2";
+import { FaPlay } from "react-icons/fa";
 
 export type SongCardProps = {
   name: string;
@@ -79,16 +80,13 @@ export function SongCard(props: SongCardProps) {
           {/* <Skeleton className="absolute inset-0 -z-10 size-full hover:scale-110" /> */}
 
           {!hidePlayButton && (
-            <div className="absolute inset-0 hidden from-transparent to-black group-hover:bg-gradient-to-b lg:group-hover:flex">
+            <div className=" absolute inset-0 hidden from-transparent to-black group-hover:bg-gradient-to-b lg:group-hover:flex">
               <PlayButton2
                 type={type}
                 token={url.split("/").pop()!}
-                className="group/play z-20 m-auto aspect-square w-12 rounded-full bg-muted/75 duration-200 hover:w-16 active:w-14"
+                className="flex absolute bottom-0 right-0 bg-green-500 m-2 drop-shadow-md items-center justify-center group/play z-20 aspect-square w-12 rounded-full  duration-200 hover:scale-110 active:w-14"
               >
-                <Play
-                  strokeWidth={10}
-                  className="m-auto h-full w-6 p-0.5 duration-200 group-hover/play:w-8"
-                />
+                <FaPlay strokeWidth={10} className="text-black" />
               </PlayButton2>
             </div>
             // <div
