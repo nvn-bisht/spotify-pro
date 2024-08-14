@@ -60,9 +60,9 @@ export function SongCard(props: SongCardProps) {
             ["radio_station", "artist"].includes(type) && "rounded-full border"
           )}
         >
-          {/* <Wrapper href={getHref(url, type)} className="absolute inset-0 z-10">
+          <Wrapper href={getHref(url, type)} className="absolute inset-0 z-10">
             <span className="sr-only">View {name}</span>
-          </Wrapper> */}
+          </Wrapper>
 
           <ImageWithFallback
             src={imageSrc}
